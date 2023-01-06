@@ -41,19 +41,6 @@ platforms:
     box: mwrock/Windows2012R2
 
 suites:
-- name: default
-  run_list:
-    - recipe[install_chef::default]
-  # attributes:
-  #   newrelic_infra:
-  #     delete_yaml_quotes: false
-  #     features:
-  #       host_integrations: ['nri-cassandra', 'nri-mysql', 'nri-redis', 'nri-nginx', 'nri-apache']
-  #     config:
-  #       license_key: abcd
-  #     host_integrations:
-  #       config:
-  #         cassandra:
-  #           username: test
-  #           password: kitchen
-  #           hosts: '["/"]'
+  - name: default
+    run_list:
+      - recipe[install_chef::default]
