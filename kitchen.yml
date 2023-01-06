@@ -1,46 +1,32 @@
 ---
 driver:
   name: vagrant
-  provider: virtualbox
 
 provisioner:
-  name: chef_zero
-  product_version: <%= ENV['CHEF_VERSION'] || 15 %>
-  chef_license: accept
+  product_name: chef
+  product_version: <%= ENV['CHEF_VERSION'] || "latest" %>
+  install_strategy: once
+  deprecations_as_errors: true
 
 verifier:
   name: inspec
 
 platforms:
-- name: centos-7
-  driver:
-    box: bento/centos-7
-- name: centos-8
-  driver:
-    box: bento/centos-8
-- name: debian-8
-  driver:
-    box: bento/debian-8
-- name: debian-9
-  driver:
-    box: bento/debian-9
-- name: debian-10
-  driver:
-    box: bento/debian-10
-- name: ubuntu-16.04
-  driver:
-    box: bento/ubuntu-16.04
-- name: ubuntu-18.04
-  driver:
-    box: bento/ubuntu-18.04
-- name: ubuntu-20.04
-  driver:
-    box: bento/ubuntu-20.04
-- name: windows-2012r2
-  driver:
-    box: mwrock/Windows2012R2
+  - name: amazonlinux2
+    driver_config:
+      box: mvbcoding/awslinux
+  - name: debian-10
+  - name: debian-11
+  - name: centos-7
+  - name: centos-8
+  - name: oracle-7
+  - name: fedora-29
+  - name: ubuntu-18.04
+  - name: ubuntu-20.04
+  - name: ubuntu-22.04
+  - name: opensuse-leap-15
 
 suites:
-  - name: default
+  - name: install
     run_list:
       - recipe[install_chef::default]
