@@ -17,3 +17,13 @@ chef_version '>= 16.0'
 # a Supermarket.
 #
 # source_url 'https://github.com/<insert_org_here>/install_chef'
+#
+name              'chef-install'
+maintainer        'New Relic, Inc'
+maintainer_email  'hzhao@newrelic.com'
+license           'All rights reserved'
+description       'Installs/Configures the New Relic agents'
+# source_url        'https://github.com/newrelic/infrastructure-agent-chef'
+# issues_url        'https://github.com/newrelic/infrastructure-agent-chef/issues'
+version           '0.12.3'
+chef_version      '>= 15'
