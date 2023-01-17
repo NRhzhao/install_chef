@@ -1,0 +1,9 @@
+default['newrelic']['api_key'] = nil
+default["newrelic"]["account_id"] = nil
+default["newrelic"]["region"] = "US"
+default["newrelic"]["install_names"] = []
+default["newrelic"]["vebosity"] = "info"
+default["newrelic"]["proxy_url"] = nil
+default["newrelic"]["env_variables"] = []
+default["newrelic"]["tags"] = []
+default["newrelic"]["timeout_seconds"] = 600
